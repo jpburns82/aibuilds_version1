@@ -1,0 +1,8 @@
+{
+  "openai": {
+    "apiKey": "ENV.OPENAI_API_KEY"
+  },
+  "anthropic": {
+    "apiKey": "ENV.ANTHROPIC_API_KEY"
+  }
+}
