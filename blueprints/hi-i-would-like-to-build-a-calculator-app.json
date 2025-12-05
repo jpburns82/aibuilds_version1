@@ -1,0 +1,394 @@
+{
+  "projectName": "hi-i-would-like-to-build-a-calculator-app",
+  "projectMode": "mvp",
+  "strictnessProfile": "mvp",
+  "version": "1.0.0",
+  "generatedAt": "2025-12-05T09:34:03.271Z",
+  "generatedBy": "ArchitectAgent",
+  "folderTree": {
+    "name": "hi-i-would-like-to-build-a-calculator-app",
+    "type": "folder",
+    "path": "/",
+    "required": true,
+    "children": [
+      {
+        "name": "models",
+        "type": "folder",
+        "path": "/models/",
+        "required": true,
+        "children": []
+      },
+      {
+        "name": "types",
+        "type": "folder",
+        "path": "/types/",
+        "required": true,
+        "children": []
+      },
+      {
+        "name": "manifest.js",
+        "type": "file",
+        "path": "/manifest.js",
+        "required": true,
+        "fileType": "js"
+      },
+      {
+        "name": "Display.ts",
+        "type": "file",
+        "path": "/Display.ts",
+        "required": true,
+        "fileType": "ts"
+      },
+      {
+        "name": "test.ts",
+        "type": "file",
+        "path": "/test.ts",
+        "required": true,
+        "fileType": "ts"
+      },
+      {
+        "name": "Keypad.ts",
+        "type": "file",
+        "path": "/Keypad.ts",
+        "required": true,
+        "fileType": "ts"
+      },
+      {
+        "name": "Button.ts",
+        "type": "file",
+        "path": "/Button.ts",
+        "required": true,
+        "fileType": "ts"
+      },
+      {
+        "name": "History.ts",
+        "type": "file",
+        "path": "/History.ts",
+        "required": true,
+        "fileType": "ts"
+      },
+      {
+        "name": "HistoryItem.ts",
+        "type": "file",
+        "path": "/HistoryItem.ts",
+        "required": true,
+        "fileType": "ts"
+      },
+      {
+        "name": "MemoryPanel.ts",
+        "type": "file",
+        "path": "/MemoryPanel.ts",
+        "required": true,
+        "fileType": "ts"
+      },
+      {
+        "name": "ErrorBoundary.ts",
+        "type": "file",
+        "path": "/ErrorBoundary.ts",
+        "required": true,
+        "fileType": "ts"
+      },
+      {
+        "name": "AppController.ts",
+        "type": "file",
+        "path": "/AppController.ts",
+        "required": true,
+        "fileType": "ts"
+      },
+      {
+        "name": "StateManager.ts",
+        "type": "file",
+        "path": "/StateManager.ts",
+        "required": true,
+        "fileType": "ts"
+      },
+      {
+        "name": "CalculatorEngine.ts",
+        "type": "file",
+        "path": "/CalculatorEngine.ts",
+        "required": true,
+        "fileType": "ts"
+      },
+      {
+        "name": "operations.ts",
+        "type": "file",
+        "path": "/operations.ts",
+        "required": true,
+        "fileType": "ts"
+      },
+      {
+        "name": "MemoryManager.ts",
+        "type": "file",
+        "path": "/MemoryManager.ts",
+        "required": true,
+        "fileType": "ts"
+      },
+      {
+        "name": "HistoryManager.ts",
+        "type": "file",
+        "path": "/HistoryManager.ts",
+        "required": true,
+        "fileType": "ts"
+      },
+      {
+        "name": "StorageService.ts",
+        "type": "file",
+        "path": "/StorageService.ts",
+        "required": true,
+        "fileType": "ts"
+      },
+      {
+        "name": "Calculation.ts",
+        "type": "file",
+        "path": "/Calculation.ts",
+        "required": true,
+        "fileType": "ts"
+      },
+      {
+        "name": "CalculationEntry.ts",
+        "type": "file",
+        "path": "/CalculationEntry.ts",
+        "required": true,
+        "fileType": "ts"
+      },
+      {
+        "name": "AppState.ts",
+        "type": "file",
+        "path": "/AppState.ts",
+        "required": true,
+        "fileType": "ts"
+      },
+      {
+        "name": "MemoryState.ts",
+        "type": "file",
+        "path": "/MemoryState.ts",
+        "required": true,
+        "fileType": "ts"
+      },
+      {
+        "name": "OperationType.ts",
+        "type": "file",
+        "path": "/OperationType.ts",
+        "required": true,
+        "fileType": "ts"
+      },
+      {
+        "name": "inputValidator.ts",
+        "type": "file",
+        "path": "/inputValidator.ts",
+        "required": true,
+        "fileType": "ts"
+      },
+      {
+        "name": "numberFormatter.ts",
+        "type": "file",
+        "path": "/numberFormatter.ts",
+        "required": true,
+        "fileType": "ts"
+      },
+      {
+        "name": "keyMappings.ts",
+        "type": "file",
+        "path": "/keyMappings.ts",
+        "required": true,
+        "fileType": "ts"
+      },
+      {
+        "name": "errorMessages.ts",
+        "type": "file",
+        "path": "/errorMessages.ts",
+        "required": true,
+        "fileType": "ts"
+      },
+      {
+        "name": "mathHelpers.ts",
+        "type": "file",
+        "path": "/mathHelpers.ts",
+        "required": true,
+        "fileType": "ts"
+      },
+      {
+        "name": "useCalculator.ts",
+        "type": "file",
+        "path": "/useCalculator.ts",
+        "required": true,
+        "fileType": "ts"
+      },
+      {
+        "name": "useHistory.ts",
+        "type": "file",
+        "path": "/useHistory.ts",
+        "required": true,
+        "fileType": "ts"
+      },
+      {
+        "name": "useMemory.ts",
+        "type": "file",
+        "path": "/useMemory.ts",
+        "required": true,
+        "fileType": "ts"
+      },
+      {
+        "name": "useKeyboard.ts",
+        "type": "file",
+        "path": "/useKeyboard.ts",
+        "required": true,
+        "fileType": "ts"
+      },
+      {
+        "name": "CalculatorContext.ts",
+        "type": "file",
+        "path": "/CalculatorContext.ts",
+        "required": true,
+        "fileType": "ts"
+      },
+      {
+        "name": "ThemeContext.ts",
+        "type": "file",
+        "path": "/ThemeContext.ts",
+        "required": true,
+        "fileType": "ts"
+      },
+      {
+        "name": "index.ts",
+        "type": "file",
+        "path": "/index.ts",
+        "required": true,
+        "fileType": "ts"
+      },
+      {
+        "name": "types.ts",
+        "type": "file",
+        "path": "/types.ts",
+        "required": true,
+        "fileType": "ts"
+      },
+      {
+        "name": "App.ts",
+        "type": "file",
+        "path": "/App.ts",
+        "required": true,
+        "fileType": "ts"
+      },
+      {
+        "name": "setupTests.ts",
+        "type": "file",
+        "path": "/setupTests.ts",
+        "required": true,
+        "fileType": "ts"
+      },
+      {
+        "name": "calculationData.ts",
+        "type": "file",
+        "path": "/calculationData.ts",
+        "required": true,
+        "fileType": "ts"
+      },
+      {
+        "name": "mockStates.ts",
+        "type": "file",
+        "path": "/mockStates.ts",
+        "required": true,
+        "fileType": "ts"
+      },
+      {
+        "name": "config.js",
+        "type": "file",
+        "path": "/config.js",
+        "required": true,
+        "fileType": "js"
+      },
+      {
+        "name": "tsconfig.js",
+        "type": "file",
+        "path": "/tsconfig.js",
+        "required": true,
+        "fileType": "js"
+      },
+      {
+        "name": "eslintrc.js",
+        "type": "file",
+        "path": "/eslintrc.js",
+        "required": true,
+        "fileType": "js"
+      },
+      {
+        "name": "package.js",
+        "type": "file",
+        "path": "/package.js",
+        "required": true,
+        "fileType": "js"
+      },
+      {
+        "name": "package-lock.js",
+        "type": "file",
+        "path": "/package-lock.js",
+        "required": true,
+        "fileType": "js"
+      }
+    ]
+  },
+  "requiredFiles": [
+    "manifest.js",
+    "Display.ts",
+    "test.ts",
+    "Keypad.ts",
+    "Button.ts",
+    "History.ts",
+    "HistoryItem.ts",
+    "MemoryPanel.ts",
+    "ErrorBoundary.ts",
+    "AppController.ts",
+    "StateManager.ts",
+    "CalculatorEngine.ts",
+    "operations.ts",
+    "MemoryManager.ts",
+    "HistoryManager.ts",
+    "StorageService.ts",
+    "Calculation.ts",
+    "CalculationEntry.ts",
+    "AppState.ts",
+    "MemoryState.ts",
+    "OperationType.ts",
+    "inputValidator.ts",
+    "numberFormatter.ts",
+    "keyMappings.ts",
+    "errorMessages.ts",
+    "mathHelpers.ts",
+    "useCalculator.ts",
+    "useHistory.ts",
+    "useMemory.ts",
+    "useKeyboard.ts",
+    "CalculatorContext.ts",
+    "ThemeContext.ts",
+    "index.ts",
+    "types.ts",
+    "App.ts",
+    "setupTests.ts",
+    "calculationData.ts",
+    "mockStates.ts",
+    "config.js",
+    "tsconfig.js",
+    "eslintrc.js",
+    "package.js",
+    "package-lock.js"
+  ],
+  "maxLinesPerFile": 300,
+  "dependencyRules": {
+    "allowedImports": [],
+    "forbiddenImports": [
+      "eval",
+      "Function",
+      "require.cache"
+    ],
+    "allowRelativeImports": true,
+    "allowCrossFolderImports": true
+  },
+  "namingRules": {
+    "fileNaming": "camelCase",
+    "folderNaming": "kebab-case",
+    "variableNaming": "camelCase"
+  },
+  "description": "Generated from user prompt: hi i would like to build a calculator app",
+  "tags": []
+}

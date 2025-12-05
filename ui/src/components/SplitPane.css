@@ -1,0 +1,40 @@
+.split-pane {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.split-pane--horizontal {
+  flex-direction: row;
+}
+
+.split-pane--vertical {
+  flex-direction: column;
+}
+
+.split-pane__pane {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.split-pane__resizer {
+  flex-shrink: 0;
+  background-color: var(--border-color);
+  transition: background-color 0.2s ease;
+}
+
+.split-pane__resizer:hover {
+  background-color: var(--accent-blue);
+}
+
+.split-pane__resizer--horizontal {
+  width: 4px;
+  cursor: col-resize;
+}
+
+.split-pane__resizer--vertical {
+  height: 4px;
+  cursor: row-resize;
+}

@@ -1,6 +1,9 @@
 import * as path from 'path';
+import * as fs from 'fs';
 import { FileWriter } from '../tools/fileWriter';
 import { Logger } from '../utils/logger';
+import { parseBlueprint, Blueprint } from '../blueprint/BlueprintSchema';
+import { shouldBlockScaffolding } from '../blueprint/StrictnessProfiles';
 
 export interface ProjectFile {
   path: string;
@@ -21,13 +24,35 @@ export class ProjectScaffolder {
     this.fileWriter = new FileWriter(baseOutputDir);
   }
 
-  scaffoldProject(structure: ProjectStructure): {
+  scaffoldProject(
+    structure: ProjectStructure,
+    blueprintPath?: string
+  ): {
     success: boolean;
     projectPath: string;
     filesCreated: number;
     errors: string[];
+    blocked?: boolean;
   } {
     Logger.step(`Scaffolding project: ${structure.name}`);
+
+    // Pre-scaffolding validation
+    if (blueprintPath) {
+      const validationResult = this.validateBeforeScaffolding(structure, blueprintPath);
+      if (validationResult.blocked) {
+        Logger.error('Scaffolding BLOCKED due to validation failures', {
+          critical: validationResult.criticalCount,
+          errors: validationResult.errorCount,
+        });
+        return {
+          success: false,
+          projectPath: '',
+          filesCreated: 0,
+          errors: validationResult.violations.map(v => v.message),
+          blocked: true,
+        };
+      }
+    }
 
     const projectPath = path.join(
       this.fileWriter.getOutputDirectory(),
@@ -83,6 +108,79 @@ export class ProjectScaffolder {
       .replace(/[^a-z0-9-_]/g, '-')
       .replace(/-+/g, '-')
       .replace(/^-|-$/g, '');
+  }
+
+  /**
+   * Validate project structure before scaffolding
+   */
+  private validateBeforeScaffolding(
+    structure: ProjectStructure,
+    blueprintPath: string
+  ): {
+    blocked: boolean;
+    violations: Array<{ message: string; severity: string }>;
+    criticalCount: number;
+    errorCount: number;
+  } {
+    try {
+      if (!fs.existsSync(blueprintPath)) {
+        Logger.warn('Blueprint not found, skipping pre-scaffolding validation');
+        return { blocked: false, violations: [], criticalCount: 0, errorCount: 0 };
+      }
+
+      const blueprintJson = fs.readFileSync(blueprintPath, 'utf-8');
+      const blueprint: Blueprint = parseBlueprint(blueprintJson);
+
+      Logger.info('Running pre-scaffolding validation');
+
+      const violations: Array<{ message: string; severity: string }> = [];
+
+      // Validate line counts
+      for (const file of structure.files) {
+        const lineCount = file.content.split('\n').length;
+        if (lineCount > blueprint.maxLinesPerFile) {
+          const severity = 'error';
+          violations.push({
+            message: `File ${file.path} exceeds ${blueprint.maxLinesPerFile} lines (${lineCount} lines)`,
+            severity,
+          });
+        }
+      }
+
+      // Validate required files exist
+      if (blueprint.requiredFiles) {
+        for (const requiredFile of blueprint.requiredFiles) {
+          const exists = structure.files.some(f => f.path.includes(requiredFile));
+          if (!exists) {
+            violations.push({
+              message: `Required file missing: ${requiredFile}`,
+              severity: 'warning',
+            });
+          }
+        }
+      }
+
+      const criticalCount = violations.filter(v => v.severity === 'critical').length;
+      const errorCount = violations.filter(v => v.severity === 'error').length;
+
+      // Check if scaffolding should be blocked
+      const profile = { mode: blueprint.strictnessProfile };
+      const shouldBlock = violations.some(v => shouldBlockScaffolding(v.severity as any, profile as any));
+
+      if (violations.length > 0) {
+        Logger.warn('Pre-scaffolding validation violations found:', violations.slice(0, 5));
+      }
+
+      return {
+        blocked: shouldBlock,
+        violations,
+        criticalCount,
+        errorCount,
+      };
+    } catch (error) {
+      Logger.error('Pre-scaffolding validation failed', error);
+      return { blocked: false, violations: [], criticalCount: 0, errorCount: 0 };
+    }
   }
 
   parseAgentOutputToProject(

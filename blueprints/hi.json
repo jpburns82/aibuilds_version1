@@ -1,0 +1,259 @@
+{
+  "projectName": "hi",
+  "projectMode": "mvp",
+  "strictnessProfile": "mvp",
+  "version": "1.0.0",
+  "generatedAt": "2025-12-05T09:49:17.640Z",
+  "generatedBy": "ArchitectAgent",
+  "folderTree": {
+    "name": "hi",
+    "type": "folder",
+    "path": "/",
+    "required": true,
+    "children": [
+      {
+        "name": "src",
+        "type": "folder",
+        "path": "/src/",
+        "required": true,
+        "children": []
+      },
+      {
+        "name": "controller.ts",
+        "type": "file",
+        "path": "/controller.ts",
+        "required": true,
+        "fileType": "ts"
+      },
+      {
+        "name": "index.ts",
+        "type": "file",
+        "path": "/index.ts",
+        "required": true,
+        "fileType": "ts"
+      },
+      {
+        "name": "middleware.ts",
+        "type": "file",
+        "path": "/middleware.ts",
+        "required": true,
+        "fileType": "ts"
+      },
+      {
+        "name": "routes.ts",
+        "type": "file",
+        "path": "/routes.ts",
+        "required": true,
+        "fileType": "ts"
+      },
+      {
+        "name": "validator.ts",
+        "type": "file",
+        "path": "/validator.ts",
+        "required": true,
+        "fileType": "ts"
+      },
+      {
+        "name": "service.ts",
+        "type": "file",
+        "path": "/service.ts",
+        "required": true,
+        "fileType": "ts"
+      },
+      {
+        "name": "greeting-templates.ts",
+        "type": "file",
+        "path": "/greeting-templates.ts",
+        "required": true,
+        "fileType": "ts"
+      },
+      {
+        "name": "cache-keys.ts",
+        "type": "file",
+        "path": "/cache-keys.ts",
+        "required": true,
+        "fileType": "ts"
+      },
+      {
+        "name": "repository.ts",
+        "type": "file",
+        "path": "/repository.ts",
+        "required": true,
+        "fileType": "ts"
+      },
+      {
+        "name": "entity.ts",
+        "type": "file",
+        "path": "/entity.ts",
+        "required": true,
+        "fileType": "ts"
+      },
+      {
+        "name": "dto.ts",
+        "type": "file",
+        "path": "/dto.ts",
+        "required": true,
+        "fileType": "ts"
+      },
+      {
+        "name": "enum.ts",
+        "type": "file",
+        "path": "/enum.ts",
+        "required": true,
+        "fileType": "ts"
+      },
+      {
+        "name": "config.ts",
+        "type": "file",
+        "path": "/config.ts",
+        "required": true,
+        "fileType": "ts"
+      },
+      {
+        "name": "util.ts",
+        "type": "file",
+        "path": "/util.ts",
+        "required": true,
+        "fileType": "ts"
+      },
+      {
+        "name": "_create_users_table.ts",
+        "type": "file",
+        "path": "/_create_users_table.ts",
+        "required": true,
+        "fileType": "ts"
+      },
+      {
+        "name": "_create_greetings_table.ts",
+        "type": "file",
+        "path": "/_create_greetings_table.ts",
+        "required": true,
+        "fileType": "ts"
+      },
+      {
+        "name": "_create_sessions_table.ts",
+        "type": "file",
+        "path": "/_create_sessions_table.ts",
+        "required": true,
+        "fileType": "ts"
+      },
+      {
+        "name": "_create_analytics_table.ts",
+        "type": "file",
+        "path": "/_create_analytics_table.ts",
+        "required": true,
+        "fileType": "ts"
+      },
+      {
+        "name": "seed.ts",
+        "type": "file",
+        "path": "/seed.ts",
+        "required": true,
+        "fileType": "ts"
+      },
+      {
+        "name": "connection.ts",
+        "type": "file",
+        "path": "/connection.ts",
+        "required": true,
+        "fileType": "ts"
+      },
+      {
+        "name": "d.ts",
+        "type": "file",
+        "path": "/d.ts",
+        "required": true,
+        "fileType": "ts"
+      },
+      {
+        "name": "app.ts",
+        "type": "file",
+        "path": "/app.ts",
+        "required": true,
+        "fileType": "ts"
+      },
+      {
+        "name": "server.ts",
+        "type": "file",
+        "path": "/server.ts",
+        "required": true,
+        "fileType": "ts"
+      },
+      {
+        "name": "test.ts",
+        "type": "file",
+        "path": "/test.ts",
+        "required": true,
+        "fileType": "ts"
+      },
+      {
+        "name": "setup.ts",
+        "type": "file",
+        "path": "/setup.ts",
+        "required": true,
+        "fileType": "ts"
+      },
+      {
+        "name": "teardown.ts",
+        "type": "file",
+        "path": "/teardown.ts",
+        "required": true,
+        "fileType": "ts"
+      },
+      {
+        "name": "migrate.ts",
+        "type": "file",
+        "path": "/migrate.ts",
+        "required": true,
+        "fileType": "ts"
+      }
+    ]
+  },
+  "requiredFiles": [
+    "controller.ts",
+    "index.ts",
+    "middleware.ts",
+    "routes.ts",
+    "validator.ts",
+    "service.ts",
+    "greeting-templates.ts",
+    "cache-keys.ts",
+    "repository.ts",
+    "entity.ts",
+    "dto.ts",
+    "enum.ts",
+    "config.ts",
+    "util.ts",
+    "_create_users_table.ts",
+    "_create_greetings_table.ts",
+    "_create_sessions_table.ts",
+    "_create_analytics_table.ts",
+    "seed.ts",
+    "connection.ts",
+    "d.ts",
+    "app.ts",
+    "server.ts",
+    "test.ts",
+    "setup.ts",
+    "teardown.ts",
+    "migrate.ts"
+  ],
+  "maxLinesPerFile": 300,
+  "dependencyRules": {
+    "allowedImports": [],
+    "forbiddenImports": [
+      "eval",
+      "Function",
+      "require.cache"
+    ],
+    "allowRelativeImports": true,
+    "allowCrossFolderImports": true
+  },
+  "namingRules": {
+    "fileNaming": "camelCase",
+    "folderNaming": "kebab-case",
+    "variableNaming": "camelCase"
+  },
+  "description": "Generated from user prompt: hi",
+  "tags": []
+}

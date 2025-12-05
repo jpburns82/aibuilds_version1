@@ -1,0 +1,143 @@
+.workbench-layout {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-primary);
+}
+
+.workbench-layout__status-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px;
+  background-color: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.workbench-layout__logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.workbench-layout__logo-icon {
+  background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
+  color: white;
+  font-weight: 700;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.workbench-layout__logo-text {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--text-primary);
+}
+
+.workbench-layout__status {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.workbench-layout__status-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+.workbench-layout__status-indicator--running {
+  background-color: var(--accent-blue);
+}
+
+.workbench-layout__status-indicator--blocked {
+  background-color: var(--accent-orange);
+}
+
+.workbench-layout__status-indicator--completed {
+  background-color: var(--accent-green);
+  animation: none;
+}
+
+.workbench-layout__status-indicator--error {
+  background-color: var(--error);
+  animation: none;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.workbench-layout__stop-btn {
+  padding: 4px 12px;
+  font-size: 12px;
+  background-color: var(--error);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.workbench-layout__stop-btn:hover {
+  background-color: #a93226;
+}
+
+.workbench-layout__content {
+  flex: 1;
+  overflow: hidden;
+}
+
+.workbench-pane {
+  height: 100%;
+  padding: 8px;
+  overflow: hidden;
+}
+
+.workbench-pane--ideation {
+  padding-left: 12px;
+}
+
+.workbench-pane--tools {
+  padding-right: 12px;
+}
+
+.workbench-pane .panel {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-secondary);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.workbench-pane .panel-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--text-primary);
+  background-color: var(--bg-tertiary);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.workbench-pane .panel-header__badge {
+  font-size: 10px;
+  font-weight: 500;
+  padding: 2px 6px;
+  background-color: var(--accent-blue);
+  color: white;
+  border-radius: 4px;
+  text-transform: capitalize;
+}
+
+.workbench-pane .panel-content {
+  flex: 1;
+  overflow: auto;
+}

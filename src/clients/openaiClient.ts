@@ -15,15 +15,26 @@ export class OpenAIClient {
 
   async chat(messages: Message[], temperature: number = 0.7, maxTokens: number = 4000): Promise<ChatCompletion> {
     try {
-      const response = await this.client.chat.completions.create({
+      // o1 models use different parameters
+      const isO1Model = this.model.startsWith('o1');
+
+      const requestParams: any = {
         model: this.model,
         messages: messages.map(msg => ({
           role: msg.role,
           content: msg.content,
         })),
-        temperature,
-        max_tokens: maxTokens,
-      });
+      };
+
+      if (isO1Model) {
+        // o1 models don't support temperature and use max_completion_tokens
+        requestParams.max_completion_tokens = maxTokens;
+      } else {
+        requestParams.temperature = temperature;
+        requestParams.max_tokens = maxTokens;
+      }
+
+      const response = await this.client.chat.completions.create(requestParams);
 
       const content = response.choices[0]?.message?.content || '';
       const usage = response.usage;

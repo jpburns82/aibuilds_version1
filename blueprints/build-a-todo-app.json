@@ -1,0 +1,555 @@
+{
+  "projectName": "build-a-todo-app",
+  "projectMode": "mvp",
+  "strictnessProfile": "mvp",
+  "version": "1.0.0",
+  "generatedAt": "2025-12-05T09:32:14.827Z",
+  "generatedBy": "ArchitectAgent",
+  "folderTree": {
+    "name": "build-a-todo-app",
+    "type": "folder",
+    "path": "/",
+    "required": true,
+    "children": [
+      {
+        "name": "src",
+        "type": "folder",
+        "path": "/src/",
+        "required": true,
+        "children": []
+      },
+      {
+        "name": "Node.js",
+        "type": "file",
+        "path": "/Node.js",
+        "required": true,
+        "fileType": "js"
+      },
+      {
+        "name": "database.js",
+        "type": "file",
+        "path": "/database.js",
+        "required": true,
+        "fileType": "js"
+      },
+      {
+        "name": "redis.js",
+        "type": "file",
+        "path": "/redis.js",
+        "required": true,
+        "fileType": "js"
+      },
+      {
+        "name": "auth.js",
+        "type": "file",
+        "path": "/auth.js",
+        "required": true,
+        "fileType": "js"
+      },
+      {
+        "name": "env.js",
+        "type": "file",
+        "path": "/env.js",
+        "required": true,
+        "fileType": "js"
+      },
+      {
+        "name": "controller.js",
+        "type": "file",
+        "path": "/controller.js",
+        "required": true,
+        "fileType": "js"
+      },
+      {
+        "name": "service.js",
+        "type": "file",
+        "path": "/service.js",
+        "required": true,
+        "fileType": "js"
+      },
+      {
+        "name": "repository.js",
+        "type": "file",
+        "path": "/repository.js",
+        "required": true,
+        "fileType": "js"
+      },
+      {
+        "name": "model.js",
+        "type": "file",
+        "path": "/model.js",
+        "required": true,
+        "fileType": "js"
+      },
+      {
+        "name": "middleware.js",
+        "type": "file",
+        "path": "/middleware.js",
+        "required": true,
+        "fileType": "js"
+      },
+      {
+        "name": "validator.js",
+        "type": "file",
+        "path": "/validator.js",
+        "required": true,
+        "fileType": "js"
+      },
+      {
+        "name": "logger.js",
+        "type": "file",
+        "path": "/logger.js",
+        "required": true,
+        "fileType": "js"
+      },
+      {
+        "name": "errors.js",
+        "type": "file",
+        "path": "/errors.js",
+        "required": true,
+        "fileType": "js"
+      },
+      {
+        "name": "response.js",
+        "type": "file",
+        "path": "/response.js",
+        "required": true,
+        "fileType": "js"
+      },
+      {
+        "name": "jwt.js",
+        "type": "file",
+        "path": "/jwt.js",
+        "required": true,
+        "fileType": "js"
+      },
+      {
+        "name": "password.js",
+        "type": "file",
+        "path": "/password.js",
+        "required": true,
+        "fileType": "js"
+      },
+      {
+        "name": "index.js",
+        "type": "file",
+        "path": "/index.js",
+        "required": true,
+        "fileType": "js"
+      },
+      {
+        "name": "routes.js",
+        "type": "file",
+        "path": "/routes.js",
+        "required": true,
+        "fileType": "js"
+      },
+      {
+        "name": "-create-users.js",
+        "type": "file",
+        "path": "/-create-users.js",
+        "required": true,
+        "fileType": "js"
+      },
+      {
+        "name": "-create-tasks.js",
+        "type": "file",
+        "path": "/-create-tasks.js",
+        "required": true,
+        "fileType": "js"
+      },
+      {
+        "name": "demo-data.js",
+        "type": "file",
+        "path": "/demo-data.js",
+        "required": true,
+        "fileType": "js"
+      },
+      {
+        "name": "app.js",
+        "type": "file",
+        "path": "/app.js",
+        "required": true,
+        "fileType": "js"
+      },
+      {
+        "name": "server.js",
+        "type": "file",
+        "path": "/server.js",
+        "required": true,
+        "fileType": "js"
+      },
+      {
+        "name": "test.js",
+        "type": "file",
+        "path": "/test.js",
+        "required": true,
+        "fileType": "js"
+      },
+      {
+        "name": "setup.js",
+        "type": "file",
+        "path": "/setup.js",
+        "required": true,
+        "fileType": "js"
+      },
+      {
+        "name": "eslintrc.js",
+        "type": "file",
+        "path": "/eslintrc.js",
+        "required": true,
+        "fileType": "js"
+      },
+      {
+        "name": "package.js",
+        "type": "file",
+        "path": "/package.js",
+        "required": true,
+        "fileType": "js"
+      },
+      {
+        "name": "package-lock.js",
+        "type": "file",
+        "path": "/package-lock.js",
+        "required": true,
+        "fileType": "js"
+      },
+      {
+        "name": "manifest.js",
+        "type": "file",
+        "path": "/manifest.js",
+        "required": true,
+        "fileType": "js"
+      },
+      {
+        "name": "Button.js",
+        "type": "file",
+        "path": "/Button.js",
+        "required": true,
+        "fileType": "js"
+      },
+      {
+        "name": "Input.js",
+        "type": "file",
+        "path": "/Input.js",
+        "required": true,
+        "fileType": "js"
+      },
+      {
+        "name": "Modal.js",
+        "type": "file",
+        "path": "/Modal.js",
+        "required": true,
+        "fileType": "js"
+      },
+      {
+        "name": "Loader.js",
+        "type": "file",
+        "path": "/Loader.js",
+        "required": true,
+        "fileType": "js"
+      },
+      {
+        "name": "ErrorBoundary.js",
+        "type": "file",
+        "path": "/ErrorBoundary.js",
+        "required": true,
+        "fileType": "js"
+      },
+      {
+        "name": "Header.js",
+        "type": "file",
+        "path": "/Header.js",
+        "required": true,
+        "fileType": "js"
+      },
+      {
+        "name": "Sidebar.js",
+        "type": "file",
+        "path": "/Sidebar.js",
+        "required": true,
+        "fileType": "js"
+      },
+      {
+        "name": "Footer.js",
+        "type": "file",
+        "path": "/Footer.js",
+        "required": true,
+        "fileType": "js"
+      },
+      {
+        "name": "LoginForm.js",
+        "type": "file",
+        "path": "/LoginForm.js",
+        "required": true,
+        "fileType": "js"
+      },
+      {
+        "name": "RegisterForm.js",
+        "type": "file",
+        "path": "/RegisterForm.js",
+        "required": true,
+        "fileType": "js"
+      },
+      {
+        "name": "PrivateRoute.js",
+        "type": "file",
+        "path": "/PrivateRoute.js",
+        "required": true,
+        "fileType": "js"
+      },
+      {
+        "name": "TaskList.js",
+        "type": "file",
+        "path": "/TaskList.js",
+        "required": true,
+        "fileType": "js"
+      },
+      {
+        "name": "TaskItem.js",
+        "type": "file",
+        "path": "/TaskItem.js",
+        "required": true,
+        "fileType": "js"
+      },
+      {
+        "name": "TaskForm.js",
+        "type": "file",
+        "path": "/TaskForm.js",
+        "required": true,
+        "fileType": "js"
+      },
+      {
+        "name": "TaskFilter.js",
+        "type": "file",
+        "path": "/TaskFilter.js",
+        "required": true,
+        "fileType": "js"
+      },
+      {
+        "name": "TaskSearch.js",
+        "type": "file",
+        "path": "/TaskSearch.js",
+        "required": true,
+        "fileType": "js"
+      },
+      {
+        "name": "HomePage.js",
+        "type": "file",
+        "path": "/HomePage.js",
+        "required": true,
+        "fileType": "js"
+      },
+      {
+        "name": "LoginPage.js",
+        "type": "file",
+        "path": "/LoginPage.js",
+        "required": true,
+        "fileType": "js"
+      },
+      {
+        "name": "RegisterPage.js",
+        "type": "file",
+        "path": "/RegisterPage.js",
+        "required": true,
+        "fileType": "js"
+      },
+      {
+        "name": "DashboardPage.js",
+        "type": "file",
+        "path": "/DashboardPage.js",
+        "required": true,
+        "fileType": "js"
+      },
+      {
+        "name": "ProfilePage.js",
+        "type": "file",
+        "path": "/ProfilePage.js",
+        "required": true,
+        "fileType": "js"
+      },
+      {
+        "name": "NotFoundPage.js",
+        "type": "file",
+        "path": "/NotFoundPage.js",
+        "required": true,
+        "fileType": "js"
+      },
+      {
+        "name": "useAuth.js",
+        "type": "file",
+        "path": "/useAuth.js",
+        "required": true,
+        "fileType": "js"
+      },
+      {
+        "name": "useTasks.js",
+        "type": "file",
+        "path": "/useTasks.js",
+        "required": true,
+        "fileType": "js"
+      },
+      {
+        "name": "useDebounce.js",
+        "type": "file",
+        "path": "/useDebounce.js",
+        "required": true,
+        "fileType": "js"
+      },
+      {
+        "name": "useLocalStorage.js",
+        "type": "file",
+        "path": "/useLocalStorage.js",
+        "required": true,
+        "fileType": "js"
+      },
+      {
+        "name": "AuthContext.js",
+        "type": "file",
+        "path": "/AuthContext.js",
+        "required": true,
+        "fileType": "js"
+      },
+      {
+        "name": "TaskContext.js",
+        "type": "file",
+        "path": "/TaskContext.js",
+        "required": true,
+        "fileType": "js"
+      },
+      {
+        "name": "api.js",
+        "type": "file",
+        "path": "/api.js",
+        "required": true,
+        "fileType": "js"
+      },
+      {
+        "name": "constants.js",
+        "type": "file",
+        "path": "/constants.js",
+        "required": true,
+        "fileType": "js"
+      },
+      {
+        "name": "formatters.js",
+        "type": "file",
+        "path": "/formatters.js",
+        "required": true,
+        "fileType": "js"
+      },
+      {
+        "name": "validators.js",
+        "type": "file",
+        "path": "/validators.js",
+        "required": true,
+        "fileType": "js"
+      },
+      {
+        "name": "storage.js",
+        "type": "file",
+        "path": "/storage.js",
+        "required": true,
+        "fileType": "js"
+      },
+      {
+        "name": "App.js",
+        "type": "file",
+        "path": "/App.js",
+        "required": true,
+        "fileType": "js"
+      },
+      {
+        "name": "config.js",
+        "type": "file",
+        "path": "/config.js",
+        "required": true,
+        "fileType": "js"
+      }
+    ]
+  },
+  "requiredFiles": [
+    "Node.js",
+    "database.js",
+    "redis.js",
+    "auth.js",
+    "env.js",
+    "controller.js",
+    "service.js",
+    "repository.js",
+    "model.js",
+    "middleware.js",
+    "validator.js",
+    "logger.js",
+    "errors.js",
+    "response.js",
+    "jwt.js",
+    "password.js",
+    "index.js",
+    "routes.js",
+    "-create-users.js",
+    "-create-tasks.js",
+    "demo-data.js",
+    "app.js",
+    "server.js",
+    "test.js",
+    "setup.js",
+    "eslintrc.js",
+    "package.js",
+    "package-lock.js",
+    "manifest.js",
+    "Button.js",
+    "Input.js",
+    "Modal.js",
+    "Loader.js",
+    "ErrorBoundary.js",
+    "Header.js",
+    "Sidebar.js",
+    "Footer.js",
+    "LoginForm.js",
+    "RegisterForm.js",
+    "PrivateRoute.js",
+    "TaskList.js",
+    "TaskItem.js",
+    "TaskForm.js",
+    "TaskFilter.js",
+    "TaskSearch.js",
+    "HomePage.js",
+    "LoginPage.js",
+    "RegisterPage.js",
+    "DashboardPage.js",
+    "ProfilePage.js",
+    "NotFoundPage.js",
+    "useAuth.js",
+    "useTasks.js",
+    "useDebounce.js",
+    "useLocalStorage.js",
+    "AuthContext.js",
+    "TaskContext.js",
+    "api.js",
+    "constants.js",
+    "formatters.js",
+    "validators.js",
+    "storage.js",
+    "App.js",
+    "config.js"
+  ],
+  "maxLinesPerFile": 300,
+  "dependencyRules": {
+    "allowedImports": [],
+    "forbiddenImports": [
+      "eval",
+      "Function",
+      "require.cache"
+    ],
+    "allowRelativeImports": true,
+    "allowCrossFolderImports": true
+  },
+  "namingRules": {
+    "fileNaming": "camelCase",
+    "folderNaming": "kebab-case",
+    "variableNaming": "camelCase"
+  },
+  "description": "Generated from user prompt: build a todo app",
+  "tags": []
+}

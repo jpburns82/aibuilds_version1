@@ -1,0 +1,38 @@
+.agent-message-bubble {
+  background-color: var(--bg-secondary);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.agent-message-bubble__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  background-color: var(--bg-tertiary);
+  border-left: 3px solid;
+}
+
+.agent-message-bubble__agent {
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.agent-message-bubble__time {
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+.agent-message-bubble__content {
+  padding: 12px;
+}
+
+.agent-message-bubble__content pre {
+  margin: 0;
+  font-family: 'Fira Code', 'Consolas', monospace;
+  font-size: 12px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  color: var(--text-primary);
+}

@@ -1,0 +1,77 @@
+.agent-status-bar {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 10px 16px;
+  background-color: var(--bg-tertiary);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.agent-status-bar__section {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.agent-status-bar__label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.agent-status-bar__badge {
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.status--idle {
+  background-color: var(--bg-secondary);
+  color: var(--text-secondary);
+}
+
+.status--running {
+  background-color: var(--accent-blue);
+  color: white;
+  animation: pulse 1.5s infinite;
+}
+
+.status--completed {
+  background-color: var(--success);
+  color: white;
+}
+
+.status--error {
+  background-color: var(--error);
+  color: white;
+}
+
+.status--blocked {
+  background-color: var(--warning);
+  color: white;
+}
+
+.agent-status-bar__agent {
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.agent-status-bar__value {
+  font-size: 13px;
+  color: var(--text-primary);
+}
+
+.agent-status-bar__mode {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  background-color: var(--bg-secondary);
+  border-radius: 4px;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}

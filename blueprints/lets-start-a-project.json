@@ -1,0 +1,147 @@
+{
+  "projectName": "lets-start-a-project",
+  "projectMode": "mvp",
+  "strictnessProfile": "mvp",
+  "version": "1.0.0",
+  "generatedAt": "2025-12-05T09:25:05.487Z",
+  "generatedBy": "ArchitectAgent",
+  "folderTree": {
+    "name": "lets-start-a-project",
+    "type": "folder",
+    "path": "/",
+    "required": true,
+    "children": [
+      {
+        "name": "src",
+        "type": "folder",
+        "path": "/src/",
+        "required": true,
+        "children": []
+      },
+      {
+        "name": "Node.js",
+        "type": "file",
+        "path": "/Node.js",
+        "required": true,
+        "fileType": "js"
+      },
+      {
+        "name": "database.js",
+        "type": "file",
+        "path": "/database.js",
+        "required": true,
+        "fileType": "js"
+      },
+      {
+        "name": "auth.js",
+        "type": "file",
+        "path": "/auth.js",
+        "required": true,
+        "fileType": "js"
+      },
+      {
+        "name": "email.js",
+        "type": "file",
+        "path": "/email.js",
+        "required": true,
+        "fileType": "js"
+      },
+      {
+        "name": "redis.js",
+        "type": "file",
+        "path": "/redis.js",
+        "required": true,
+        "fileType": "js"
+      },
+      {
+        "name": "index.js",
+        "type": "file",
+        "path": "/index.js",
+        "required": true,
+        "fileType": "js"
+      },
+      {
+        "name": "User.js",
+        "type": "file",
+        "path": "/User.js",
+        "required": true,
+        "fileType": "js"
+      },
+      {
+        "name": "Task.js",
+        "type": "file",
+        "path": "/Task.js",
+        "required": true,
+        "fileType": "js"
+      },
+      {
+        "name": "TaskShare.js",
+        "type": "file",
+        "path": "/TaskShare.js",
+        "required": true,
+        "fileType": "js"
+      },
+      {
+        "name": "Session.js",
+        "type": "file",
+        "path": "/Session.js",
+        "required": true,
+        "fileType": "js"
+      },
+      {
+        "name": "userSchema.js",
+        "type": "file",
+        "path": "/userSchema.js",
+        "required": true,
+        "fileType": "js"
+      },
+      {
+        "name": "taskSchema.js",
+        "type": "file",
+        "path": "/taskSchema.js",
+        "required": true,
+        "fileType": "js"
+      },
+      {
+        "name": "shareSchema.js",
+        "type": "file",
+        "path": "/shareSchema.js",
+        "required": true,
+        "fileType": "js"
+      }
+    ]
+  },
+  "requiredFiles": [
+    "Node.js",
+    "database.js",
+    "auth.js",
+    "email.js",
+    "redis.js",
+    "index.js",
+    "User.js",
+    "Task.js",
+    "TaskShare.js",
+    "Session.js",
+    "userSchema.js",
+    "taskSchema.js",
+    "shareSchema.js"
+  ],
+  "maxLinesPerFile": 300,
+  "dependencyRules": {
+    "allowedImports": [],
+    "forbiddenImports": [
+      "eval",
+      "Function",
+      "require.cache"
+    ],
+    "allowRelativeImports": true,
+    "allowCrossFolderImports": true
+  },
+  "namingRules": {
+    "fileNaming": "camelCase",
+    "folderNaming": "kebab-case",
+    "variableNaming": "camelCase"
+  },
+  "description": "Generated from user prompt: lets start a project",
+  "tags": []
+}

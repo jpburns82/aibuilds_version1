@@ -1,0 +1,25 @@
+.strictness-selector {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.strictness-selector__label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+}
+
+.strictness-selector__select {
+  min-width: 120px;
+  padding: 8px 12px;
+  border-width: 2px;
+}
+
+.strictness-selector__indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}

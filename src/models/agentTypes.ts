@@ -22,6 +22,9 @@ export interface PipelineContext {
   coderOutput?: AgentOutput;
   qaOutput?: AgentOutput;
   leadArchitectOutput?: AgentOutput;
+  blueprintPath?: string;
+  projectMode?: 'prototype' | 'mvp' | 'production';
+  validationReport?: any;
 }
 
 export interface Decision {
@@ -29,4 +32,5 @@ export interface Decision {
   finalDeliverable?: string;
   revisionInstructions?: string[];
   reasoning: string;
+  projectPath?: string;
 }

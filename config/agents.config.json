@@ -5,19 +5,19 @@
     "description": "GPT-5.1 excels at deep analysis and requirement breakdown"
   },
   "architect": {
-    "model": "o1",
-    "provider": "openai",
-    "description": "GPT-5.1 excels at system design and architecture planning"
+    "model": "claude-sonnet-4-5-20250929",
+    "provider": "anthropic",
+    "description": "Claude 4.5 Sonnet for system design and architecture planning"
   },
   "coder": {
-    "model": "claude-sonnet-4-5-20250514",
+    "model": "claude-sonnet-4-5-20250929",
     "provider": "anthropic",
-    "description": "Claude 4.5 excels at code generation and implementation"
+    "description": "Claude 4.5 Sonnet for code generation"
   },
   "qa": {
-    "model": "claude-sonnet-4-5-20250514",
+    "model": "claude-sonnet-4-5-20250929",
     "provider": "anthropic",
-    "description": "Claude 4.5 provides thorough code review and analysis"
+    "description": "Claude 4.5 Sonnet for code review"
   },
   "leadArchitect": {
     "model": "o1",

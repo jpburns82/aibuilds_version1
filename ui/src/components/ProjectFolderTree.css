@@ -1,0 +1,70 @@
+.project-folder-tree {
+  height: 100%;
+  overflow: auto;
+  padding: 8px 0;
+}
+
+.project-folder-tree--loading,
+.project-folder-tree--empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-folder-tree__placeholder {
+  text-align: center;
+  color: var(--text-secondary);
+}
+
+.project-folder-tree__placeholder small {
+  display: block;
+  margin-top: 4px;
+  font-size: 12px;
+}
+
+.project-folder-tree__spinner {
+  color: var(--text-secondary);
+}
+
+.tree-node__row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  cursor: pointer;
+  border-radius: 4px;
+  margin: 1px 4px;
+  transition: background-color 0.15s ease;
+}
+
+.tree-node__row:hover {
+  background-color: var(--bg-tertiary);
+}
+
+.tree-node__row--selected {
+  background-color: var(--accent-blue) !important;
+  color: white;
+}
+
+.tree-node__arrow {
+  font-size: 10px;
+  width: 14px;
+  text-align: center;
+  color: var(--text-secondary);
+}
+
+.tree-node__icon {
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.tree-node__name {
+  font-size: 13px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tree-node__row--folder .tree-node__name {
+  font-weight: 500;
+}
