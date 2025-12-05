@@ -1,107 +1,46 @@
 /**
  * ProjectFolderTree Component
  *
- * Displays project file structure as a collapsible tree.
+ * Displays project file structure as a collapsible tree with context menu.
  */
 
 import { useState, useCallback } from 'react';
-import clsx from 'clsx';
 import { FileTreeNode } from '../types';
+import { ContextMenu, ContextMenuItem } from './ContextMenu';
+import { TreeNode } from './TreeNode';
 import './ProjectFolderTree.css';
+
+interface ContextMenuState {
+  x: number;
+  y: number;
+  node: FileTreeNode;
+}
 
 interface ProjectFolderTreeProps {
   tree: FileTreeNode | null;
   selectedPath: string | null;
   onSelectFile: (path: string) => void;
+  onCreateFile?: (parentPath: string) => void;
+  onCreateFolder?: (parentPath: string) => void;
+  onDelete?: (path: string) => void;
+  onRename?: (path: string) => void;
+  onCopyPath?: (path: string) => void;
   loading?: boolean;
-}
-
-interface TreeNodeProps {
-  node: FileTreeNode;
-  depth: number;
-  selectedPath: string | null;
-  onSelectFile: (path: string) => void;
-  expandedPaths: Set<string>;
-  toggleExpanded: (path: string) => void;
-}
-
-function TreeNode({
-  node,
-  depth,
-  selectedPath,
-  onSelectFile,
-  expandedPaths,
-  toggleExpanded,
-}: TreeNodeProps) {
-  const isFolder = node.type === 'folder';
-  const isExpanded = expandedPaths.has(node.path);
-  const isSelected = node.path === selectedPath;
-
-  const handleClick = () => {
-    if (isFolder) {
-      toggleExpanded(node.path);
-    } else {
-      onSelectFile(node.path);
-    }
-  };
-
-  const getFileIcon = (name: string): string => {
-    if (name.endsWith('.ts') || name.endsWith('.tsx')) return '📘';
-    if (name.endsWith('.js') || name.endsWith('.jsx')) return '📙';
-    if (name.endsWith('.json')) return '📋';
-    if (name.endsWith('.css')) return '🎨';
-    if (name.endsWith('.md')) return '📝';
-    if (name.endsWith('.lua')) return '🌙';
-    return '📄';
-  };
-
-  return (
-    <div className="tree-node">
-      <div
-        className={clsx('tree-node__row', {
-          'tree-node__row--selected': isSelected,
-          'tree-node__row--folder': isFolder,
-        })}
-        style={{ paddingLeft: `${depth * 16 + 8}px` }}
-        onClick={handleClick}
-      >
-        {isFolder && (
-          <span className="tree-node__arrow">
-            {isExpanded ? '▼' : '▶'}
-          </span>
-        )}
-        <span className="tree-node__icon">
-          {isFolder ? (isExpanded ? '📂' : '📁') : getFileIcon(node.name)}
-        </span>
-        <span className="tree-node__name">{node.name}</span>
-      </div>
-
-      {isFolder && isExpanded && node.children && (
-        <div className="tree-node__children">
-          {node.children.map((child) => (
-            <TreeNode
-              key={child.path}
-              node={child}
-              depth={depth + 1}
-              selectedPath={selectedPath}
-              onSelectFile={onSelectFile}
-              expandedPaths={expandedPaths}
-              toggleExpanded={toggleExpanded}
-            />
-          ))}
-        </div>
-      )}
-    </div>
-  );
 }
 
 export function ProjectFolderTree({
   tree,
   selectedPath,
   onSelectFile,
+  onCreateFile,
+  onCreateFolder,
+  onDelete,
+  onRename,
+  onCopyPath,
   loading = false,
 }: ProjectFolderTreeProps) {
   const [expandedPaths, setExpandedPaths] = useState<Set<string>>(new Set());
+  const [contextMenu, setContextMenu] = useState<ContextMenuState | null>(null);
 
   const toggleExpanded = useCallback((path: string) => {
     setExpandedPaths((prev) => {
@@ -113,6 +52,84 @@ export function ProjectFolderTree({
       }
       return next;
     });
+  }, []);
+
+  const handleContextMenu = useCallback((e: React.MouseEvent, node: FileTreeNode) => {
+    setContextMenu({ x: e.clientX, y: e.clientY, node });
+  }, []);
+
+  const closeContextMenu = useCallback(() => {
+    setContextMenu(null);
+  }, []);
+
+  const getContextMenuItems = useCallback((): ContextMenuItem[] => {
+    if (!contextMenu) return [];
+    const { node } = contextMenu;
+    const isFolder = node.type === 'folder';
+    const items: ContextMenuItem[] = [];
+
+    if (!isFolder) {
+      items.push({ label: 'Open', icon: '📄', action: () => onSelectFile(node.path) });
+    }
+
+    if (isFolder && onCreateFile) {
+      items.push({ label: 'New File', icon: '📝', action: () => onCreateFile(node.path) });
+    }
+
+    if (isFolder && onCreateFolder) {
+      items.push({ label: 'New Folder', icon: '📁', action: () => onCreateFolder(node.path) });
+    }
+
+    if (items.length > 0) {
+      items.push({ label: '', icon: '', action: () => {}, separator: true });
+    }
+
+    if (onCopyPath) {
+      items.push({
+        label: 'Copy Path',
+        icon: '📋',
+        action: () => {
+          onCopyPath(node.path);
+          navigator.clipboard.writeText(node.path);
+        },
+      });
+    }
+
+    if (onRename) {
+      items.push({ label: 'Rename', icon: '✏️', action: () => onRename(node.path) });
+    }
+
+    if (onDelete) {
+      items.push({ label: '', icon: '', action: () => {}, separator: true });
+      items.push({ label: 'Delete', icon: '🗑️', action: () => onDelete(node.path) });
+    }
+
+    if (items.length === 0) {
+      items.push({
+        label: 'Copy Path',
+        icon: '📋',
+        action: () => navigator.clipboard.writeText(node.path),
+      });
+    }
+
+    return items;
+  }, [contextMenu, onSelectFile, onCreateFile, onCreateFolder, onDelete, onRename, onCopyPath]);
+
+  const expandAll = useCallback(() => {
+    if (!tree) return;
+    const allPaths = new Set<string>();
+    const collectPaths = (node: FileTreeNode) => {
+      if (node.type === 'folder') {
+        allPaths.add(node.path);
+        node.children?.forEach(collectPaths);
+      }
+    };
+    collectPaths(tree);
+    setExpandedPaths(allPaths);
+  }, [tree]);
+
+  const collapseAll = useCallback(() => {
+    setExpandedPaths(new Set());
   }, []);
 
   if (loading) {
@@ -136,14 +153,33 @@ export function ProjectFolderTree({
 
   return (
     <div className="project-folder-tree">
-      <TreeNode
-        node={tree}
-        depth={0}
-        selectedPath={selectedPath}
-        onSelectFile={onSelectFile}
-        expandedPaths={expandedPaths}
-        toggleExpanded={toggleExpanded}
-      />
+      <div className="project-folder-tree__toolbar">
+        <button className="project-folder-tree__toolbar-btn" onClick={expandAll} title="Expand All">
+          ⊞
+        </button>
+        <button className="project-folder-tree__toolbar-btn" onClick={collapseAll} title="Collapse All">
+          ⊟
+        </button>
+      </div>
+      <div className="project-folder-tree__content">
+        <TreeNode
+          node={tree}
+          depth={0}
+          selectedPath={selectedPath}
+          onSelectFile={onSelectFile}
+          expandedPaths={expandedPaths}
+          toggleExpanded={toggleExpanded}
+          onContextMenu={handleContextMenu}
+        />
+      </div>
+      {contextMenu && (
+        <ContextMenu
+          x={contextMenu.x}
+          y={contextMenu.y}
+          items={getContextMenuItems()}
+          onClose={closeContextMenu}
+        />
+      )}
     </div>
   );
 }

@@ -1,0 +1,210 @@
+/**
+ * Theme Variables
+ * CSS custom properties for theming the AI-Builds IDE
+ */
+
+:root {
+  /* Color scheme preference */
+  color-scheme: dark;
+
+  /* Primary colors */
+  --accent-primary: #007acc;
+  --accent-secondary: #0ea5e9;
+  --accent-success: #4ade80;
+  --accent-warning: #facc15;
+  --accent-error: #f87171;
+  --accent-info: #60a5fa;
+
+  /* Background colors - Dark theme */
+  --bg-primary: #1e1e1e;
+  --bg-secondary: #252526;
+  --bg-tertiary: #2d2d2d;
+  --bg-hover: #383838;
+  --bg-active: #094771;
+  --bg-input: #3c3c3c;
+
+  /* Text colors */
+  --text-primary: #d4d4d4;
+  --text-secondary: #888888;
+  --text-muted: #6b6b6b;
+  --text-accent: #4fc3f7;
+  --text-error: #f87171;
+  --text-success: #4ade80;
+  --text-warning: #facc15;
+
+  /* Border colors */
+  --border-color: #3c3c3c;
+  --border-active: #007acc;
+  --border-hover: #555555;
+
+  /* Scrollbar */
+  --scrollbar-track: #1e1e1e;
+  --scrollbar-thumb: #555555;
+  --scrollbar-thumb-hover: #666666;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.5);
+
+  /* Agent colors */
+  --agent-analyst: #9333ea;
+  --agent-architect: #0ea5e9;
+  --agent-coder: #22c55e;
+  --agent-qa: #f59e0b;
+  --agent-lead: #ec4899;
+
+  /* Syntax highlighting */
+  --syntax-keyword: #569cd6;
+  --syntax-string: #ce9178;
+  --syntax-number: #b5cea8;
+  --syntax-comment: #6a9955;
+  --syntax-function: #dcdcaa;
+  --syntax-variable: #9cdcfe;
+  --syntax-type: #4ec9b0;
+  --syntax-operator: #d4d4d4;
+
+  /* Transitions */
+  --transition-fast: 0.1s ease;
+  --transition-normal: 0.2s ease;
+  --transition-slow: 0.3s ease;
+
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 12px;
+  --spacing-lg: 16px;
+  --spacing-xl: 24px;
+
+  /* Border radius */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
+
+  /* Font sizes */
+  --font-xs: 10px;
+  --font-sm: 11px;
+  --font-md: 12px;
+  --font-lg: 13px;
+  --font-xl: 14px;
+
+  /* Font families */
+  --font-ui: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'Cascadia Code', 'Fira Code', Consolas, Monaco, monospace;
+
+  /* Z-index layers */
+  --z-base: 0;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-modal: 300;
+  --z-popover: 400;
+  --z-tooltip: 500;
+}
+
+/* Light theme - can be toggled via class or prefers-color-scheme */
+[data-theme="light"],
+.theme-light {
+  color-scheme: light;
+
+  --bg-primary: #f5f5f5;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #e8e8e8;
+  --bg-hover: #d4d4d4;
+  --bg-active: #cce5ff;
+  --bg-input: #ffffff;
+
+  --text-primary: #1e1e1e;
+  --text-secondary: #555555;
+  --text-muted: #888888;
+  --text-accent: #0066cc;
+
+  --border-color: #d4d4d4;
+  --border-hover: #bbbbbb;
+
+  --scrollbar-track: #f5f5f5;
+  --scrollbar-thumb: #c4c4c4;
+  --scrollbar-thumb-hover: #a8a8a8;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Auto dark theme based on system preference */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    color-scheme: light;
+
+    --bg-primary: #f5f5f5;
+    --bg-secondary: #ffffff;
+    --bg-tertiary: #e8e8e8;
+    --bg-hover: #d4d4d4;
+    --bg-active: #cce5ff;
+    --bg-input: #ffffff;
+
+    --text-primary: #1e1e1e;
+    --text-secondary: #555555;
+    --text-muted: #888888;
+    --text-accent: #0066cc;
+
+    --border-color: #d4d4d4;
+    --border-hover: #bbbbbb;
+
+    --scrollbar-track: #f5f5f5;
+    --scrollbar-thumb: #c4c4c4;
+    --scrollbar-thumb-hover: #a8a8a8;
+  }
+}
+
+/* Global scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: var(--radius-md);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+}
+
+/* Selection styling */
+::selection {
+  background: var(--accent-primary);
+  color: #fff;
+}
+
+/* Focus styling */
+:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+}
+
+/* Global reset for better theming */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: var(--font-ui);
+  font-size: var(--font-lg);
+  color: var(--text-primary);
+  background: var(--bg-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

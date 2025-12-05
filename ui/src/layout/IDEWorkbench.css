@@ -1,0 +1,174 @@
+/**
+ * IDEWorkbench Styles
+ * Full IDE layout with GoldenLayout integration
+ */
+
+.ide-workbench {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  background: var(--bg-primary, #1e1e1e);
+  color: var(--text-primary, #d4d4d4);
+  overflow: hidden;
+}
+
+.ide-workbench__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 36px;
+  min-height: 36px;
+  padding: 0 12px;
+  background: var(--bg-tertiary, #323233);
+  border-bottom: 1px solid var(--border-color, #3c3c3c);
+  user-select: none;
+}
+
+.ide-workbench__logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ide-workbench__logo-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background: linear-gradient(135deg, #007acc, #0ea5e9);
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.ide-workbench__logo-text {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary, #fff);
+}
+
+.ide-workbench__status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ide-workbench__status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.ide-workbench__status-dot--running {
+  background: #4ade80;
+}
+
+.ide-workbench__status-dot--blocked {
+  background: #facc15;
+}
+
+.ide-workbench__status-dot--completed {
+  background: #60a5fa;
+}
+
+.ide-workbench__status-dot--error {
+  background: #f87171;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.ide-workbench__status-text {
+  font-size: 12px;
+  color: var(--text-secondary, #888);
+}
+
+.ide-workbench__stop-btn {
+  padding: 3px 10px;
+  background: rgba(239, 68, 68, 0.2);
+  border: 1px solid #ef4444;
+  border-radius: 4px;
+  color: #ef4444;
+  font-size: 11px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.ide-workbench__stop-btn:hover {
+  background: rgba(239, 68, 68, 0.3);
+}
+
+.ide-workbench__actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ide-workbench__reset-layout {
+  padding: 3px 10px;
+  background: transparent;
+  border: 1px solid var(--border-color, #555);
+  border-radius: 4px;
+  color: var(--text-secondary, #888);
+  font-size: 11px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.ide-workbench__reset-layout:hover {
+  background: var(--bg-hover, #3c3c3c);
+  color: var(--text-primary, #fff);
+}
+
+.ide-workbench__main {
+  flex: 1;
+  overflow: hidden;
+}
+
+/* Override GoldenLayout splitter size for better drag handle */
+.ide-workbench .lm_splitter {
+  min-width: 4px;
+  min-height: 4px;
+}
+
+.ide-workbench .lm_splitter:hover {
+  transition: background 0.15s ease;
+}
+
+/* Panel content adjustments for GoldenLayout */
+.ide-workbench .gl-panel > * {
+  width: 100%;
+  height: 100%;
+}
+
+/* Remove header from wrapped components since GL provides tabs */
+.ide-workbench .gl-panel .panel-header,
+.ide-workbench .gl-panel .vm-console__header,
+.ide-workbench .gl-panel .file-viewer__header {
+  display: none;
+}
+
+/* Adjust components to fill their panels */
+.ide-workbench .gl-panel .ideation-chat,
+.ide-workbench .gl-panel .agent-chat-window,
+.ide-workbench .gl-panel .file-viewer,
+.ide-workbench .gl-panel .validation-panel,
+.ide-workbench .gl-panel .vm-console,
+.ide-workbench .gl-panel .log-stream,
+.ide-workbench .gl-panel .project-folder-tree {
+  height: 100%;
+  border: none;
+  border-radius: 0;
+}
+
+/* File viewer editor adjustment */
+.ide-workbench .gl-panel .file-viewer__editor {
+  height: 100%;
+}

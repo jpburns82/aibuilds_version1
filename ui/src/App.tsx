@@ -1,13 +1,14 @@
 /**
  * App Component
  *
- * Root component for AI-Builds Workbench.
+ * Root component for AI-Builds IDE.
+ * Uses GoldenLayout-based IDE shell for Phase 5.2.
  */
 
-import { WorkbenchLayout } from './layout/WorkbenchLayout';
+import { IDEWorkbench } from './layout/IDEWorkbench';
 
 function App() {
-  return <WorkbenchLayout />;
+  return <IDEWorkbench />;
 }
 
 export default App;

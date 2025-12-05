@@ -1,0 +1,195 @@
+/**
+ * GoldenLayout Wrapper Styles
+ * Custom styling for the GoldenLayout IDE shell
+ */
+
+.golden-layout-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: var(--bg-primary, #1e1e1e);
+}
+
+.golden-layout-wrapper__loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--text-secondary, #888);
+  font-size: 14px;
+}
+
+/* GoldenLayout Theme Overrides */
+.lm_goldenlayout {
+  background: var(--bg-primary, #1e1e1e);
+}
+
+.lm_content {
+  background: var(--bg-secondary, #252526);
+  border: 1px solid var(--border-color, #3c3c3c);
+}
+
+.lm_header {
+  background: var(--bg-tertiary, #2d2d2d) !important;
+  border-bottom: 1px solid var(--border-color, #3c3c3c);
+}
+
+.lm_tab {
+  background: var(--bg-tertiary, #2d2d2d) !important;
+  color: var(--text-secondary, #888) !important;
+  border: none !important;
+  margin-right: 1px;
+  padding: 4px 16px !important;
+  font-size: 12px;
+  font-family: inherit;
+}
+
+.lm_tab:hover {
+  background: var(--bg-hover, #383838) !important;
+  color: var(--text-primary, #fff) !important;
+}
+
+.lm_tab.lm_active {
+  background: var(--bg-secondary, #252526) !important;
+  color: var(--text-primary, #fff) !important;
+  border-bottom: 2px solid var(--accent-primary, #007acc) !important;
+}
+
+.lm_tabdropdown_list {
+  background: var(--bg-tertiary, #2d2d2d);
+  border: 1px solid var(--border-color, #3c3c3c);
+}
+
+.lm_tabdropdown_list .lm_tab {
+  margin: 0;
+  padding: 6px 12px !important;
+}
+
+.lm_splitter {
+  background: var(--border-color, #3c3c3c);
+  opacity: 1;
+}
+
+.lm_splitter:hover {
+  background: var(--accent-primary, #007acc);
+}
+
+.lm_splitter.lm_dragging {
+  background: var(--accent-primary, #007acc);
+}
+
+/* Close button styling */
+.lm_close_tab {
+  background: transparent !important;
+  opacity: 0.6;
+  width: 14px !important;
+  height: 14px !important;
+}
+
+.lm_close_tab:hover {
+  opacity: 1;
+}
+
+/* Maximise button */
+.lm_maximise {
+  background: transparent !important;
+  opacity: 0.6;
+}
+
+.lm_maximise:hover {
+  opacity: 1;
+}
+
+/* Drag proxy styling */
+.lm_dragProxy {
+  background: var(--bg-secondary, #252526);
+  border: 2px solid var(--accent-primary, #007acc);
+  opacity: 0.9;
+}
+
+.lm_dragProxy .lm_header {
+  background: var(--bg-tertiary, #2d2d2d) !important;
+}
+
+/* Drop target indicators */
+.lm_drop_tab_placeholder {
+  background: var(--accent-primary, #007acc);
+  opacity: 0.3;
+}
+
+/* Panel content wrapper */
+.gl-panel {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-secondary, #252526);
+}
+
+/* Panel type specific overrides */
+.gl-panel--ideation-chat,
+.gl-panel--agent-console {
+  padding: 0;
+}
+
+.gl-panel--file-explorer {
+  border-right: 1px solid var(--border-color, #3c3c3c);
+}
+
+.gl-panel--file-viewer {
+  padding: 0;
+}
+
+.gl-panel--terminal {
+  background: #000;
+}
+
+.gl-panel--log-stream {
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-size: 12px;
+}
+
+/* Popped out windows */
+.lm_popin {
+  background: var(--accent-primary, #007acc) !important;
+}
+
+/* Stack dropdown */
+.lm_controls > li {
+  opacity: 0.6;
+}
+
+.lm_controls > li:hover {
+  opacity: 1;
+}
+
+/* Transition smoothness */
+.lm_transition_indicator {
+  background: var(--accent-primary, #007acc);
+  opacity: 0.3;
+}
+
+/* Focus states */
+.lm_item.lm_focused > .lm_header {
+  border-bottom: 2px solid var(--accent-primary, #007acc);
+}
+
+/* Scrollbar styling within panels */
+.gl-panel ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.gl-panel ::-webkit-scrollbar-track {
+  background: var(--bg-secondary, #252526);
+}
+
+.gl-panel ::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb, #555);
+  border-radius: 4px;
+}
+
+.gl-panel ::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover, #666);
+}

@@ -1,5 +1,35 @@
 .project-folder-tree {
+  display: flex;
+  flex-direction: column;
   height: 100%;
+}
+
+.project-folder-tree__toolbar {
+  display: flex;
+  gap: 4px;
+  padding: 4px 8px;
+  border-bottom: 1px solid var(--border-color, #3c3c3c);
+  flex-shrink: 0;
+}
+
+.project-folder-tree__toolbar-btn {
+  padding: 2px 6px;
+  background: transparent;
+  border: 1px solid var(--border-color, #555);
+  border-radius: var(--radius-sm, 2px);
+  color: var(--text-secondary, #888);
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.project-folder-tree__toolbar-btn:hover {
+  background: var(--bg-hover, #3c3c3c);
+  color: var(--text-primary, #fff);
+}
+
+.project-folder-tree__content {
+  flex: 1;
   overflow: auto;
   padding: 8px 0;
 }
